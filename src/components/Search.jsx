@@ -4,10 +4,15 @@ function Search({ setUsers }) {
 
     const [formData, setFormData] = useState({ name: "", domain: "", gender: '', availabilty: '' });
 
+
     const handleForm = (e) => {
         e.preventDefault();
+        if(formData.name=="" && formData.domain=="" && formData.gender=="" && formData.availabilty==""  ){
+            alert("Add Atleast One Filter")
+            return;
+        }
         try {
-            console.log(formData);
+           
             const getFilteredUsers = async () => {
 
                 const response = await fetch(`${import.meta.env.VITE_BASE_URL}/api/users/filter`, {
@@ -25,7 +30,6 @@ function Search({ setUsers }) {
                 setUsers(users)
             }
             getFilteredUsers();
-            clear();
         } catch (error) {
 
             console.log("something went wrong")
@@ -43,14 +47,6 @@ function Search({ setUsers }) {
         });
     };
 
-    const clear = () => {
-        setFormData({
-            name: "",
-            domain: "",
-            gender: "",
-            availabilty: ""
-        })
-    }
 
     return (
         <>
@@ -104,7 +100,6 @@ function Search({ setUsers }) {
                                     </select>
                                 </div>
                             </div>
-
                             <div className="mt-6 grid w-full grid-cols-2 justify-center space-x-4 md:flex">
                                 <button className='text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700' onClick={handleForm}>Search</button>
                             </div>
