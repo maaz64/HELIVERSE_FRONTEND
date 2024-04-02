@@ -31,8 +31,7 @@ function Search({ setUsers }) {
             }
             getFilteredUsers();
         } catch (error) {
-
-            console.log("something went wrong")
+            alert("something went wrong")
         }
     }
 
@@ -72,7 +71,6 @@ function Search({ setUsers }) {
                                         <option value={""}>Select</option>
                                         <option>Male</option>
                                         <option>Female</option>
-                                        <option>Other</option>
                                     </select>
                                 </div>
 

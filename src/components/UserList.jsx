@@ -28,12 +28,12 @@ export default function UserList({users, setUsers}) {
     <div className=" flex flex-row justify-center ">
 
                     <div className="grid mb-8 border rounded-lg shadow-sm dark:border-gray-700 md:grid-cols-4 sm:grid-cols-2  bg-white dark:bg-gray-800">
-                    {users.length==0?<h1 className='text-center text-gray-900 p-3 bg-green-50'>Loading...</h1> :users.map((user)=>
+                    {users?users.length==0?<h1 className='text-center text-gray-900 p-3 bg-green-50'>Loading...</h1> :users.map((user)=>
                         <div key={user._id}>
 
                             <Card user={user}/>
                         </div>
-                    )}
+                    ):<><h1 className='text-gray-900  text-center text-2xl font-semibold p-3'>No User Found</h1></>}
                     </div>
                     </div>
                     <div className="flex justify-around items-center text-gray-800 mt-5 mb-5">
