@@ -1,8 +1,15 @@
-# React + Vite
+## Overview
+This project is developed using React.js for the UI components
+Redux Toolkit for state management to create a dynamic and responsive user interface.Application makes API calls. All APIs that are Integrated in this application you can access it from  (https://github.com/maaz64/HELIVERSE_BACKEND) OR Live link (https://heliverse-backend-nu.vercel.app/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+## Live Demo
+https://heliverse-frontend-three.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features 
+
+- Display users in cards format with pagination
+- Search by Name, Domain, Gender, and Availability
+- Create a team
+- Responsive UI
+
