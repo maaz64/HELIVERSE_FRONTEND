@@ -1,18 +1,23 @@
 import React, { useEffect, useState } from 'react'
 import Card from './Card'
+import {useDispatch, useSelector} from "react-redux";
+import { setUsers, userSelector } from '../features/user/userSlice';
 
 
-export default function UserList({users, setUsers}) {
 
-  
+export default function UserList({}) {
+
   const [page, setPage] = useState(1);
+  const dispatch = useDispatch();
+  const users = useSelector(userSelector);
 
   useEffect(()=>{
 
     async function getUsers() {
       const response = await fetch(`${import.meta.env.VITE_BASE_URL}/api/users/?page=${page}`);
       const data = await response.json();
-      setUsers(data.data);
+      const users = data.data;
+      dispatch(setUsers(users));
     }
 
       getUsers();

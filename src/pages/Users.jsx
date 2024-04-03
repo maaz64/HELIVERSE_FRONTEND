@@ -3,7 +3,6 @@ import UserList from '../components/UserList'
 import Search from '../components/Search'
 
 function Users() {
-    const [users, setUsers] = useState([]);
     const [toggle , setToggle] = useState(false);
   return (
     <>
@@ -17,11 +16,11 @@ function Users() {
         </div>
 
         <div className="flex justify-center">
-        {toggle?<Search setUsers={setUsers}/> : null}
+        {toggle?<Search/> : null}
         </div>
             
 
-        <UserList setUsers={setUsers} users={users}/>
+        <UserList />
         </div>
     </>
   )

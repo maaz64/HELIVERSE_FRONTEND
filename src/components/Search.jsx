@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux';
+import { setUsers } from '../features/user/userSlice';
 
-function Search({ setUsers }) {
+function Search() {
 
     const [formData, setFormData] = useState({ name: "", domain: "", gender: '', availabilty: '' });
-
+    const dispatch = useDispatch();
 
     const handleForm = (e) => {
         e.preventDefault();
@@ -27,7 +29,7 @@ function Search({ setUsers }) {
                 const data = await response.json();
                 const users = data.data;
 
-                setUsers(users)
+                dispatch(setUsers(users));
             }
             getFilteredUsers();
         } catch (error) {
